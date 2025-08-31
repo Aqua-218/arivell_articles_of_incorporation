@@ -1,0 +1,51 @@
+
+:root{
+  --bg-1: #f8fafc; /* very light */
+  --bg-2: #ffffff;
+  --muted: #6b7280; /* gray */
+  --purple: #6d28d9; /* deep purple */
+  --light-aqua: #7dd3fc; /* mizuiro */
+  --accent: linear-gradient(90deg, var(--purple), #8b5cf6);
+  --text: #0b1220;
+  --card-shadow: 0 6px 18px rgba(99,102,241,0.08);
+  --max-width: 1024px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: "Noto Sans JP", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg-1);
+  color:var(--text);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+.container{max-width:var(--max-width);margin:0 auto;padding:28px}
+.site-header{padding:36px 0 6px}
+.site-header h1{margin:0;font-size:1.5rem;letter-spacing:0.2px}
+.lead{color:var(--muted);margin-top:8px}
+
+.layout{display:grid;grid-template-columns:260px 1fr;gap:28px;align-items:start}
+.toc{background:var(--bg-2);padding:18px;border-radius:12px;height:fit-content;box-shadow:var(--card-shadow);border:1px solid rgba(99,102,241,0.06)}
+.toc h2{margin:0 0 10px 0;font-size:1rem;color:var(--purple)}
+.toc ul{padding-left:16px;margin:0}
+.toc li{margin:8px 0}
+.toc a{color:#334155;text-decoration:none;font-weight:600}
+.toc a:hover{color:var(--purple)}
+
+.content{background:var(--bg-2);padding:34px;border-radius:14px;box-shadow:var(--card-shadow);border:1px solid rgba(14,22,43,0.04)}
+.content h2{border-bottom:3px solid rgba(139,92,246,0.08);padding-bottom:10px;color:var(--purple);margin-top:0}
+.content h3{margin-top:20px;color:#0f1724}
+.content p{color:#111827}
+ol{margin-left:18px}
+code{background:rgba(99,102,241,0.06);padding:2px 8px;border-radius:6px;color:var(--purple);font-weight:600}
+.doc-footer{margin-top:28px;padding-top:12px;border-top:1px solid rgba(14,22,43,0.04);color:var(--muted);font-size:0.95rem}
+
+/* subtle accent heading underlines */
+.content h3::after{content:"";display:block;height:3px;width:48px;background:linear-gradient(90deg,#7dd3fc, #8b5cf6);margin-top:8px;border-radius:4px}
+
+/* responsive */
+@media (max-width:880px){
+  .layout{grid-template-columns:1fr;}
+  .toc{order:2}
+}
